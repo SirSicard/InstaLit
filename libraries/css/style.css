@@ -1,0 +1,64 @@
+/* google fonts */
+
+* {
+   box-sizing: border-box;
+}
+
+/* CSS Variables */
+html {
+  --primary-text: #030303;
+  --seconday-text: #393f44;
+  --tertiary-text: #8b0000;
+
+  --primary-banner-color: #d4d1d1;
+  --seconday-banner-color: #a19d9d;
+  
+  --main-bg-color: #e6e6e6;
+}
+
+body {
+  background-color: var(--main-bg-color);
+}
+
+/* START navbar */
+nav {
+  background-color: var(--primary-banner-color);
+}
+
+.nav-container {
+  min-height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 24px;
+}
+
+.nav-left,
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-left>img {
+  max-height: 40px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+}
+
+.avatar > img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+} 
+
+.spacer {
+  flex: 1;
+  position: relative;
+}
+/* END navbar */
+
