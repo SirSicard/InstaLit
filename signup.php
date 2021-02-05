@@ -9,12 +9,12 @@ include_once("libraries/includes/header.php");
     <div class="card-body">
         <h5 class="card-title">Create an account</h5>
         <form method="post" action="">
-            <div class="form-group">
+            <div class="form-group login-form">
                 <input class="form-input" id="email" name="email" type="email" placeholder="Email" required>
                 <input class="form-input" id="fullname" name="fullname" type="fullname" placeholder="Fullname" required>
                 <input class="form-input" id="username" name="username" type="username" placeholder="Username" required>
                 <input class="form-input" id="password" name="password" type="password" placeholder="Password" required>
-                <input type="submit" class="" value="Create account">
+                <input type="submit" class="lit-button" value="Create account">
             </div>
         </form>
     </div>

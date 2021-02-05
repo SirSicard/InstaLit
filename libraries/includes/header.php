@@ -11,6 +11,8 @@
     <script src="https://kit.fontawesome.com/1f88de1726.js" crossorigin="anonymous"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="libraries/css/style.css">
+    <link rel="stylesheet" href="libraries/css/login.css">
+    
 
     <title>InstaLIT</title>
 </head>
