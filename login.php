@@ -1,3 +1,7 @@
+<?php
+include_once("libraries/includes/header.php");
+?>
+
 <section>
   <h2>Login</h2>
   <form action="" method="post">
@@ -6,3 +10,5 @@
     <button type="submit" name="submit">Login</button>
   </form>
 </section>
+
+<?php include_once("libraries/includes/footer.php"); ?>

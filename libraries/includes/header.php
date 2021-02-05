@@ -16,6 +16,14 @@
 </head>
 <body>
 
+<?php
+  $links = array(
+    'index' => 'Home',
+    'login' => 'Login',
+    'signup' => 'Sign Up',
+  );
+?>
+
 <!-- START navigation -->
   <nav>
     <div class="nav-container">
@@ -35,10 +43,23 @@
       <div class="spacer"></div>
 
       <div class="nav-links">
-        for each links as links
+        <ul class="nav-right no-bullets">
+          <?php foreach($links as $link_key => $link_value){ 
+            if( isset($_SESSION["usersID"]) && ( $link_key === 'signup' || $link_key === 'login' ) ){ 
+              // do nothing
+            } else { ?>
+              <li>
+                <a href="<?= $link_key; ?>.php">
+                  <?= $link_value; ?>
+                </a>
+              </li>
+            <?php } ?>
+          <?php } ?>
+        
         <div class="avatar">
           <img src="images/ui/default_user.png" alt="">
         </div>
+      
       </div>
     </div>
   </nav>
