@@ -7,8 +7,8 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <!-- Font Awesome Script -->
+    <script src="https://kit.fontawesome.com/1f88de1726.js" crossorigin="anonymous"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="libraries/css/style.css">
 
@@ -36,7 +36,7 @@
       <div class="searchbar">
         <form action="/action_page.php">
           <input type="text" placeholder="Search" name="search">
-          <button type="submit">search</button>
+          <button type="submit"><i class="fas fa-search"></i></button>
         </form>
       </div>
 
