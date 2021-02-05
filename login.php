@@ -1,5 +1,5 @@
 <?php
-include_once("header.php");
+include_once("libraries/includes/header.php");
 ?>
 
 <section>
@@ -11,4 +11,4 @@ include_once("header.php");
   </form>
 </section>
 
-<?php include_once("footer.php"); ?>
+<?php include_once("libraries/includes/footer.php"); ?>
