@@ -1,0 +1,10 @@
+.login-form input {
+  border: none;
+  border-bottom: 1px solid #808080;
+  background-color: var(--main-bg-color);
+  margin: 8px;
+}
+
+.lit-button {
+  background-color: #7a5858;
+}
