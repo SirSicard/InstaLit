@@ -8,13 +8,13 @@ include_once("libraries/includes/header.php");
             <img src="images/ui/logoXL.png" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Create an account</h5>
-                <form method="post" action="">
+                <form method="post" action="/libraries/engine/auth.php">
                     <div class="form-group login-form">
-                        <input class="form-input" id="email" name="email" type="email" placeholder="Email" required>
-                        <input class="form-input" id="fullname" name="fullname" type="fullname" placeholder="Fullname" required>
-                        <input class="form-input" id="username" name="username" type="username" placeholder="Username" required>
-                        <input class="form-input" id="password" name="password" type="password" placeholder="Password" required>
-                        <input type="submit" class="lit-button" value="Create account">
+                        <input class="form-input" id="email" name="email" type="email" placeholder="Email" >
+<!--                        <input class="form-input" id="fullname" name="fullname" type="fullname" placeholder="Fullname" required>-->
+                        <input class="form-input" id="username" name="username" type="username" placeholder="Username" >
+                        <input class="form-input" id="password" name="password" type="password" placeholder="Password" >
+                        <input name="submit" type="submit" class="lit-button" value="Create account">
                         <p class="policy-text">By registering, you agree to our terms of use, our data policy and our policy for cookies. Read more about how we collect, use and share your information in our data policy and how we use cookies and similar technology in our cookie policy.</p>
                     </div>
                 </form>
