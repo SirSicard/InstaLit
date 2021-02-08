@@ -29,6 +29,10 @@ if($action === "Login")
     login($email, $password);
 }
 
+
+// logout
+if($action === "Logout") { logout(); }
+
 //function to sign up a user
 function signup($username, $email, $password){
 
