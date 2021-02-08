@@ -88,3 +88,28 @@ ul>li>a {
 }
 /* END navbar */
 
+/* Footer styling */
+footer{
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  background: #111;
+}
+.main-footer-content {
+  display: flex;
+}
+.main-footer-content .footer-box {
+  flex-basis: 50%;
+  padding: 10px 20px;
+}
+.footer-box h2{
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.footer-box .footer-content {
+  margin: 20px;
+}
+
+
+/* End of footer styling */

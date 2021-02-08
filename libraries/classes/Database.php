@@ -6,7 +6,7 @@ class Database{
 
 
     //connection inside construct
-    public function __construct($dbhost="localhost", $dbname="instalit", $dbuser="root", $dbpassword="")
+    public function __construct($dbhost="localhost", $dbname="instalit", $dbuser="MattiasHerzig", $dbpassword="Exet1338!")
     {
         try{
             $this->connection = new mysqli($dbhost, $dbuser, $dbpassword, $dbname);
