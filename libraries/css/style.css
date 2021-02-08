@@ -114,6 +114,9 @@ ul>li>a {
   width: 100%;
   margin: 40px 0;
 }
+.login-img {
+  width: 100%;
+}
 form .data label{
   font-size: 18px;
 }
