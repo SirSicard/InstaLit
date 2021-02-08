@@ -1,14 +1,27 @@
 <?php
 include_once("libraries/includes/header.php");
 ?>
-
-<section>
-  <h2>Login</h2>
-  <form action="" method="post">
-    <input type="text" name="username" placeholder="email or username">
-    <input type="password" name="password" placeholder="password">
-    <button type="submit" name="submit">Login</button>
-  </form>
-</section>
+<div class="center">
+  <div class="container">
+    <div class="text">Login Form</div>
+    <form action="#">
+      <div class="data">
+        <label>Email or Phone</label>
+        <input type="text" required>
+      </div>
+    <div class="data">
+      <label>Password</label>
+      <input type="password" required>
+    </div>
+    <div class="forgot-pass">
+      <a href="#">Forgot Password?</a></div>
+      <div class="btn">
+        <div class="inner"></div>
+      <button type="submit">login</button>
+      </div>
+      <div class="signup-link">Not a member? <a href="#">Signup now</a></div>
+    </form>
+  </div>
+</div>
 
 <?php include_once("libraries/includes/footer.php"); ?>
