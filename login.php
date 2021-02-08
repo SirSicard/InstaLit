@@ -4,10 +4,10 @@ include_once("libraries/includes/header.php");
 
 <section>
   <h2>Login</h2>
-  <form action="" method="post">
-    <input type="text" name="username" placeholder="email or username">
-    <input type="password" name="password" placeholder="password">
-    <button type="submit" name="submit">Login</button>
+  <form method="post" action="/libraries/engine/auth.php">
+    <input type="text" name="email" placeholder="email" required>
+    <input type="password" name="password" placeholder="password" required>
+    <input type="submit" name="submit" value="Login">
   </form>
 </section>
 

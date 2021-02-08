@@ -19,6 +19,16 @@ if($action === "Create account"){
     signup($username, $email, $password);
 }
 
+
+if($action === "Login")
+{
+    //    catch login details
+    $email = $_POST['email'];
+    $password = md5($_POST['password']);
+
+    login($email, $password);
+}
+
 //function to sign up a user
 function signup($username, $email, $password){
 
@@ -47,11 +57,44 @@ function signup($username, $email, $password){
 
 
 //function to log a user in
-function login(){
+function login($email, $password){
+
+
+//    check if login details are not empty
+    if(!empty($email) and !empty($password))
+    {
+        //    connect to database
+        $connect = new Database();
+        //    match the records
+            // statements, types, parameters
+        $auth = $connect->select("select * from users where email = ? and password = ?",
+            'ss',
+            [
+                $email, $password
+            ]);
+        if(!empty($auth))
+            {
+
+                $_SESSION['user'] = $auth[0][id];
+                header("Location:../../index.php");
+//                after session value is set up, send the user to profile page
+            }
+        else
+            {
+//                redirect user to login page again
+            }
+
+    }
+    else{
+//                redirect user to login page again
+    }
+
 
 }
 
 //function to log a user out
 function logout(){
+
+    session_destroy();
 
 }
