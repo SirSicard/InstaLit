@@ -22,9 +22,18 @@
 
 <?php
   $links = array(
-    'index' => 'Home',
-    'login' => 'Login',
-    'signup' => 'Sign Up',
+    'index' => [
+      'name'    => 'Home',
+      'classes' => 'fas fa-home',
+    ],
+    'profile' => [
+      'name'    => 'My Page',
+      'classes' => 'fas fa-user-circle',
+    ],
+    'editprofile' => [
+      'name'    => 'Settings',
+      'classes' => 'fas fa-cog',
+    ],
   );
 ?>
 
@@ -32,7 +41,9 @@
   <nav>
     <div class="nav-container">
       <div class="nav-left">
-        <img src="images/ui/logoXL.png" alt="">
+        <a href="index.php">
+          <img src="images/ui/logoXL.png" alt="">
+        </a>
       </div>
 
       <div class="spacer"></div>
@@ -54,7 +65,7 @@
             } else { ?>
               <li>
                 <a href="<?= $link_key; ?>.php">
-                  <?= $link_value; ?>
+                  <?= $link_value['name']; ?>
                 </a>
               </li>
             <?php } ?>
@@ -67,12 +78,17 @@
               </div>
             </div>
             <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-              <button class="dropdown-item" type="button"><i class="far fa-user-circle"></i>
-                <a class="profile-links" href="profile.php">Profile</a></button>
-              <button class="dropdown-item" type="button"><i class="far fa-thumbs-up"></i>
-                <a class="profile-links" href="login.php">Likes</a></button>
-              <button class="dropdown-item" type="button"><i class="fas fa-cog"></i>
-                <a class="profile-links" href="editprofile.php">Settings</a></button>
+              <?php foreach($links as $link_key => $link_value){ 
+                if( isset($_SESSION["usersID"]) && ( $link_key === 'signup' || $link_key === 'login' ) ){ 
+                  // do nothing
+                } else { ?>
+                  <button class="dropdown-item" type="button"><i class="<?= $link_value['classes']; ?>"></i>
+                    <a class="profile-links" href="<?= $link_key; ?>.php">
+                      <?= $link_value['name']; ?>
+                    </a></button>
+                <?php } ?>
+              <?php } ?>
+              
               <hr class="hr-margin" style="width:100%;">
               <button class="dropdown-item" type="button"><i class="fas fa-sign-out-alt"></i>
                 <a class="profile-links" href="../engine/logout.php">Sign out</a></button>
