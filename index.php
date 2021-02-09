@@ -1,6 +1,4 @@
-<?php //include("includes/header.php"); ?>
-<?php include("libraries/includes/header.php"); ?>
-<?php
+<?php //include("includes/header.php");
 session_start();
 
 // if no user is logged in
@@ -27,8 +25,7 @@ $getFeeds = $connect->select("select * from posts", "", []);
 print_r($getFeeds);
 
 
-
-
+include("libraries/includes/header.php");
 
 ?>
 <div>

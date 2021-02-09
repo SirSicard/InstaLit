@@ -49,7 +49,7 @@
       <div class="nav-links">
         <ul class="nav-right no-bullets">
           <?php foreach($links as $link_key => $link_value){ 
-            if( isset($_SESSION["usersID"]) && ( $link_key === 'signup' || $link_key === 'login' ) ){ 
+            if( isset($_SESSION["user"]) && ( $link_key === 'signup' || $link_key === 'login' ) ){
               // do nothing
             } else { ?>
               <li>
