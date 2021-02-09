@@ -1,11 +1,3 @@
-.login-form input {
-  border: none;
-  background-color: var(--main-bg-color);
-  margin: 8px;
-  border-radius: 3px;
-  padding: 5px;
-}
-
 .lit-button {
   background-color: #0095f6 !important;
   color: whitesmoke;
@@ -15,12 +7,5 @@
 
 .log-in-button {
   text-decoration: none;
-  font-size: large;
   color: #0095f6;
-}
-
-.policy-text{
-  width: 177px;
-  font-size: small;
-  margin-left: 40px;
 }
