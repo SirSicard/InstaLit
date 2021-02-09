@@ -80,7 +80,7 @@ function login($email, $password){
         if(!empty($auth))
             {
 
-                $_SESSION['user'] = $auth[0][id];
+                $_SESSION['user'] = $auth[0]['id'];
                 header("Location:../../index.php");
 //                after session value is set up, send the user to profile page
             }
