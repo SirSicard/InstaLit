@@ -25,7 +25,6 @@
                 <form method="post" action="/libraries/engine/auth.php">
                     <div class="form-group login-form">
                         <input class="form-input" id="email" name="email" type="email" placeholder="Email" required>
-                        <input class="form-input" id="fullname" name="fullname" type="fullname" placeholder="Full name" required>
                         <input class="form-input" id="username" name="username" type="username" placeholder="Username" required>
                         <input class="form-input" id="password" name="password" type="password" placeholder="Password" required>
                         <input name="submit" type="submit" class="lit-button" value="Create account">
