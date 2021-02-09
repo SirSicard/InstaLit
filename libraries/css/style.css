@@ -83,6 +83,16 @@ ul>li>a {
   padding: 0;
   display: flex;
 }
+
+.profile-links{
+  text-decoration: none;
+  color: inherit;
+}
+
+.hr-margin {
+  margin-top: 0px;
+  margin-bottom: 3px;
+}
 /* END navbar */
 
 /* Sign up page styling */
