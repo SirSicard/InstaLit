@@ -7,6 +7,7 @@ require_once '../classes/Database.php';
 //start session
 session_start();
 
+// we tell auth page which function to call from here
 $action = $_POST['submit'];
 
 if($action === "Create account"){
@@ -85,12 +86,14 @@ function login($email, $password){
             }
         else
             {
-//                redirect user to login page again
+//                Login data was not correct
+            header("Location: ../../login.php");
             }
 
     }
     else{
 //                redirect user to login page again
+        echo "place 2";
     }
 
 

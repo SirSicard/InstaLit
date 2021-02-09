@@ -22,20 +22,20 @@
   <div class="container">
     <img src="images/ui/logoXL.png" alt="" class="login-img">
     <div class="text"></div>
-    <form action="#">
+    <form method="post" action="/libraries/engine/auth.php">
       <div class="data">
         <label>Email or Phone</label>
-        <input type="text" required>
+        <input name="email" type="text" required>
       </div>
     <div class="data">
       <label>Password</label>
-      <input type="password" required>
+      <input name="password" type="password" required>
     </div>
     <div class="forgot-pass">
       <a href="#">Forgot Password?</a></div>
       <div class="btn">
         <div class="inner"></div>
-      <button type="submit">login</button>
+      <input type="submit" name="submit" value="Login">
       </div>
       <div class="signup-link">Not a member? <a href="signup.php">Signup now</a></div>
     </form>
