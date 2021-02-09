@@ -28,6 +28,11 @@ body {
 }
 
 
+.spacer {
+  flex: 1;
+  position: relative;
+}
+
 /* START navbar */
 nav {
   background-color: var(--primary-banner-color);
@@ -72,11 +77,6 @@ ul>li>a {
   border-radius: 50%;
 } 
 
-.spacer {
-  flex: 1;
-  position: relative;
-}
-
 .no-bullets {
   list-style: none;
   margin: 0;
@@ -109,6 +109,25 @@ ul>li>a {
   align-items: center;
 }
 /* Sign up page style ending */
+
+/* START post cards styling */
+.post-container {
+  width: 500px;
+  margin: 0 auto;
+  padding-bottom: 24px;
+}
+
+.post-container .card img {
+  width: 100%;
+}
+
+.post-left,
+.post-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* END post cards styling */
 
 /* Log in page styling */
 .container{
@@ -258,6 +277,24 @@ form .signup-link a:hover{
   box-shadow: none!important;
 }
 /* End of profile page styling */
+
+/* Edit profile page styling */
+.form-control:focus {
+  box-shadow: none;
+  border-color: #ff9d32
+}
+
+.profile-button {
+  background: #ffd030;
+  box-shadow: none;
+  border: none;
+  color: black;
+}
+.profile-button:active {
+  background: #ff9d32;
+  box-shadow: none
+}
+/* End of edit profile page styling */
 
 /* Footer styling */
 footer {
