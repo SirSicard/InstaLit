@@ -72,7 +72,7 @@
               <button class="dropdown-item" type="button"><i class="far fa-thumbs-up"></i>
                 <a class="profile-links" href="login.php">Likes</a></button>
               <button class="dropdown-item" type="button"><i class="fas fa-cog"></i>
-                <a class="profile-links" href="login.php">Settings</a></button>
+                <a class="profile-links" href="editprofile.php">Settings</a></button>
               <hr class="hr-margin" style="width:100%;">
               <button class="dropdown-item" type="button"><i class="fas fa-sign-out-alt"></i>
                 <a class="profile-links" href="../engine/logout.php">Sign out</a></button>
