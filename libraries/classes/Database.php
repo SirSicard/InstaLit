@@ -61,7 +61,8 @@ class Database{
         try{
             $doWork = $this->connection->prepare($statement);
 //            $types = str_repeat('s', count($parameters));
-            $doWork->bind_param($types,...$parameters);
+            if(!empty($types) and !empty($parameters))
+            { $doWork->bind_param($types,...$parameters); }
             $doWork->execute();
             return $doWork;
         }catch(Exception $e)
