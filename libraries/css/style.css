@@ -54,7 +54,7 @@ nav {
   align-items: center;
 }
 
-.nav-left>img {
+.nav-left>a img {
   max-height: 40px;
 }
 
