@@ -60,9 +60,24 @@
             <?php } ?>
           <?php } ?>
         
-        <div class="avatar">
-          <img src="images/ui/default_user.png" alt="">
-        </div>
+          <div class="dropdownleft">
+            <div class="btn" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <div class="avatar">
+                <img src="images/ui/default_user.png" alt="">
+              </div>
+            </div>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+              <button class="dropdown-item" type="button"><i class="far fa-user-circle"></i>
+                <a class="profile-links" href="profile.php">Profile</a></button>
+              <button class="dropdown-item" type="button"><i class="far fa-thumbs-up"></i>
+                <a class="profile-links" href="login.php">Likes</a></button>
+              <button class="dropdown-item" type="button"><i class="fas fa-cog"></i>
+                <a class="profile-links" href="login.php">Settings</a></button>
+              <hr class="hr-margin" style="width:100%;">
+              <button class="dropdown-item" type="button"><i class="fas fa-sign-out-alt"></i>
+                <a class="profile-links" href="../engine/logout.php">Sign out</a></button>
+            </div>
+          </div>
       
       </div>
     </div>
