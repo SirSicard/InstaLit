@@ -65,7 +65,7 @@
             } else { ?>
               <li>
                 <a href="<?= $link_key; ?>.php">
-                  <?= $link_value['name']; ?>
+                  <i class="<?= $link_value['classes']; ?>"></i>
                 </a>
               </li>
             <?php } ?>

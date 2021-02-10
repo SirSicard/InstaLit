@@ -4,15 +4,19 @@ FEB2021
  HTML/CSS/OOP/SQLi with Bootstrap and Fontawesome CSS and Scripts
  The goal was to make a lite version of Instagram to share photos and posts with other users.
 
+
 ==============================
 
-instaLIT team:
+
+INSTALIT TEAM:
  Mattias Herzig - Git Rogue (UI/UX/Fullstack)
  Ashish Aryal - Resident Wizard (Database/Fullstack)
  Nikola Tomasovic - Assuring Fighter (UI/UX/Fullstack)
  Kimberly Karlsson - Loud Bard (UI/UX/Assets/Scrum Master)
 
+
 ==============================
+
 
 ASSIGNMENT
  https://wcm20.lms.nodehill.se/article/projektarbete-projekt-metodik-och-verktyg
@@ -20,12 +24,15 @@ ASSIGNMENT
 TRELLO
  https://trello.com/b/asHlJEdX/instalit
 
+
 ==============================
-How to install app?
-1. pull the app from git,
-2. run composer install
-3. import the provided sql file
-4. update the database credentials on the file /libraries/classes/Database.php
+
+
+INSTALLING THE INSTALIT PROJECT
+ 1. pull the app from git,
+ 2. run composer install
+ 3. import the provided sql file
+ 4. update the database credentials on the file /libraries/classes/Database.php
 
 To fully utilize the instaLIT project, a Virtual Host is highly recommended to resolve possible host conflicts. 
 
@@ -40,6 +47,7 @@ To fully utilize the instaLIT project, a Virtual Host is highly recommended to r
     ErrorLog "logs/instalit.local.log"
     CustomLog "logs/instalit.local.log" common
  </VirtualHost>
+
 
 ==============================
 
