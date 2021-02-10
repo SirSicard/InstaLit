@@ -1,5 +1,5 @@
-WCM2020 instaLIT Project
-FEB2021
+# WCM2020 instaLIT Project
+## FEB2021
 
  HTML/CSS/OOP/SQLi with Bootstrap and Fontawesome CSS and Scripts
  The goal was to make a lite version of Instagram to share photos and posts with other users.
