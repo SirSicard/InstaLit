@@ -21,6 +21,7 @@
 
               <h6>Select Filter</h6>
               <select  name="filter">
+                  <option value="none">none</option>
                   <option value="grayscale">grayscale</option>
                   <option value="sepia">sepia</option>
                   <option value="saturate">saturate</option>

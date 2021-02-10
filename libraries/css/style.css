@@ -7,11 +7,15 @@
 /* CSS Variables */
 html {
   --primary-text: #030303;
-  --seconday-text: #393f44;
-  --tertiary-text: #8b0000;
+  --secondary-text: #768590;
+  --tertiary-text: #b9b7b7;
+
+  --fire1: #ff9d32;
+  --fire2: #ffd030;
+  --fire3: #fedf86;
 
   --primary-banner-color: #d4d1d1;
-  --seconday-banner-color: #a19d9d;
+  --secondary-banner-color: #a19d9d;
   
   --main-bg-color: #e6e6e6;
 }
@@ -38,10 +42,47 @@ body {
 }
 
 .gray-accent-dark {
-  background-color: var(--seconday-banner-color);
+  background-color: var(--secondary-banner-color);
+}
+
+.fire1 {
+  background-color: var(--fire1);
+}
+
+.fire2 {
+  background-color: var(--fire2);
+}
+
+.fire3 {
+  background-color: var(--fire3);
+}
+
+.more-padding {
+  padding-bottom: 6px;
+}
+
+.col-12 {
+  height: 125px;
 }
 
 /* END custom containers */
+
+
+/* START accents */
+.primary-text {
+  color: var(--primary-text);
+}
+
+.secondary-text {
+  color: var(--secondary-text);
+}
+
+.tertiary-text {
+  color: var(--tertiary-text);
+}
+
+/* END accents */
+
 
 /* START navbar */
 nav {
@@ -105,6 +146,7 @@ ul>li>a {
 }
 /* END navbar */
 
+
 /* Sign up page styling */
 .content-container{
   display: flex;
@@ -120,11 +162,16 @@ ul>li>a {
 }
 /* Sign up page style ending */
 
+
 /* START post cards styling */
 .post-container {
   width: 500px;
   margin: 0 auto;
   padding-bottom: 24px;
+}
+
+.post-container .card{
+  margin: 24px 0px 42px 0px;
 }
 
 .post-container .card img {
@@ -137,7 +184,18 @@ ul>li>a {
   justify-content: center;
   align-items: center;
 }
-/* END post cards styling */
+
+.post-img {
+  width: 480px;
+}
+
+.post-submit {
+  border-width: 1px;
+  border-color: rgba(66, 61, 61, 0.2);
+  padding: 8px;
+  margin-bottom: 12px;
+}
+/* END post cards st8ling */
 
 /* Log in page styling */
 .container{
@@ -254,7 +312,7 @@ form .signup-link a:hover{
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
-  border: 0 solid rgba(0,0,0,.125);
+  border: 0 solid rgba(0, 0, 0, 0.226);
   border-radius: .25rem;
   margin: 10px;
 }
@@ -446,9 +504,10 @@ footer {
     margin: 5px 0;
   }
 }  
+/* End of footer styling */
 
 
-/* css filters */
+/* START CSS filters */
 .grayscale{
   filter: grayscale(100%)
 }
@@ -467,4 +526,7 @@ footer {
   filter: invert(100%);
 }
 
-/* End of footer styling */
+.none {
+  filter: none;
+}
+/* END CSS filters */
