@@ -21,6 +21,11 @@ TRELLO
  https://trello.com/b/asHlJEdX/instalit
 
 ==============================
+How to install app?
+1. pull the app from git,
+2. run composer install
+3. import the provided sql file
+4. update the database credentials on the file /libraries/classes/Database.php
 
 To fully utilize the instaLIT project, a Virtual Host is highly recommended to resolve possible host conflicts. 
 
