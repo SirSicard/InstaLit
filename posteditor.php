@@ -17,10 +17,12 @@
           <form method="post">
 
             <h6>Upload an Image</h6>
-              <input type="file">
-            
+              <input name="post" type="file">
+
+              <h6>Select Filter</h6>
+              <input name="filter" >
             <h6>Type a Caption</h6>
-              <textarea name="comment" rows="4" cols="50"></textarea>
+              <textarea  name="caption" rows="4" cols="50"></textarea>
           </form>
           
         

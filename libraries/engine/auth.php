@@ -55,12 +55,12 @@ function signup($username, $email, $password){
                 ]);
 
             if(is_numeric($createUser)) {
-                echo "you have registered one user";
+                header("Location: ../../editprofile.php");
             }else{
-                echo "something went wrong.";
+                header("Location: ../../login.php");
             }
     }else{
-        echo "items cannot be empty";
+        header("Location: ../../login.php");
     }
 }
 
