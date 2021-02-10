@@ -16,7 +16,7 @@
     <title>InstaLIT</title>
 </head>
 
-<div class="center">
+
     <div class="container">
         <div class="content-container">
             <div class="card text-center" style="width: 410px;">
@@ -55,4 +55,3 @@
         </div>
 
     </div>
-</div>
