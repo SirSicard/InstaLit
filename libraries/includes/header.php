@@ -75,7 +75,7 @@
                 <a class="profile-links" href="editprofile.php">Settings</a></button>
               <hr class="hr-margin" style="width:100%;">
               <button class="dropdown-item" type="button"><i class="fas fa-sign-out-alt"></i>
-                <a class="profile-links" href="../engine/logout.php">Sign out</a></button>
+                <a class="profile-links" href="libraries/engine/auth.php?action=logout">Sign out</a></button>
             </div>
           </div>
       

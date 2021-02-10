@@ -21,7 +21,7 @@ $connect = new Database();
 $userData = $connect->select("select * from user_details where user_id=?",'i', [$user_id]);
 
 // if user doesnt have profile, take him to the page to settings
-if(empty($userData)) { header("Location: settings.php"); }
+if(empty($userData)) { header("Location: editprofile.php"); }
 //if he has profile, show the feed page
 //print_r($userData);
 $posts = $connect->select("SELECT `posts`.*, `user_details`.`name`, `users`.`username` FROM `posts` INNER JOIN `user_details` on `posts`.`user_id`=`user_details`.`user_id` INNER JOIN `users` on `user_details`.`user_id`=`users`.`id` ORDER BY `posts`.`id` DESC ", "", []);
