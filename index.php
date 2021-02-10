@@ -33,12 +33,47 @@ include("libraries/includes/header.php");
 ?>
     <div class="row">
     <div class="col-12">
+
+    <div class="card">
+            <div class="card-header">
+                <div class="content-container">
+                  <?php 
+                    $feedbar = array(
+                      'posteditor' => [
+                        'name'    => 'Create New Post',
+                        'classes' => 'fas fa-toilet-paper',
+                      ],
+                      'profile' => [
+                        'name'    => 'My Page',
+                        'classes' => 'fas fa-address-card',
+                      ],
+                    );
+                  ?>
+
+                  <?php
+                  foreach($feedbar as $link_key => $link_value){ 
+                    if( isset($_SESSION["user"]) && ( $link_key === 'signup' || $link_key === 'login' ) ){ 
+                      // do nothing
+                    } else { ?>
+                      
+                        <a class="profile-links" href="<?= $link_key; ?>.php">
+                          <i class="<?= $link_value['classes']; ?>"></i> <?= $link_value['name']; ?>
+                        </a>
+                    <?php } ?>
+                  <?php } ?>
+                
+                </div>
+            </div>   
+        </div>
+
     <div class="post-container">
+      <h2>
+        Main Feed
+      </h2>
+      <?php
 
-    <?php
-
-    foreach($posts as $post)
-    {
+      foreach($posts as $post)
+      {
 
        ?>
         <div class="card">

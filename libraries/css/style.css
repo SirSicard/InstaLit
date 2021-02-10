@@ -139,6 +139,12 @@ ul>li>a {
 }
 /* END post cards styling */
 
+/* START feedbar */
+.feedbar {
+  padding: 4px 6px;
+}
+/* END feedbar */
+
 /* Log in page styling */
 .container{
   position: absolute;
