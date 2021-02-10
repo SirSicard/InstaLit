@@ -79,7 +79,7 @@
             </div>
             <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
               <?php foreach($links as $link_key => $link_value){ 
-                if( isset($_SESSION["usersID"]) && ( $link_key === 'signup' || $link_key === 'login' ) ){ 
+                if( isset($_SESSION["user"]) && ( $link_key === 'signup' || $link_key === 'login' ) ){ 
                   // do nothing
                 } else { ?>
                   <button class="dropdown-item" type="button"><i class="<?= $link_value['classes']; ?>"></i>
