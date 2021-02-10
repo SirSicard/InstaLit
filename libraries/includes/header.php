@@ -28,7 +28,7 @@
     ],
     'profile' => [
       'name'    => 'My Page',
-      'classes' => 'fas fa-user-circle',
+      'classes' => 'fas fa-address-card',
     ],
     'editprofile' => [
       'name'    => 'Settings',
@@ -64,7 +64,7 @@
               // do nothing
             } else { ?>
               <li>
-                <a href="<?= $link_key; ?>.php">
+                <a href="<?= $link_key; ?>.php" title="<?= $link_value['name']; ?>">
                   <i class="<?= $link_value['classes']; ?>"></i>
                 </a>
               </li>
