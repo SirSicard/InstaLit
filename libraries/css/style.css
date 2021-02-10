@@ -27,11 +27,21 @@ body {
   margin: 0 auto;
 }
 
-
 .spacer {
   flex: 1;
   position: relative;
 }
+
+/* START custom containers */
+.gray-accent-light {
+  background-color: var(--primary-banner-color);
+}
+
+.gray-accent-dark {
+  background-color: var(--seconday-banner-color);
+}
+
+/* END custom containers */
 
 /* START navbar */
 nav {
@@ -54,7 +64,7 @@ nav {
   align-items: center;
 }
 
-.nav-left>img {
+.nav-left>a img {
   max-height: 40px;
 }
 
@@ -100,7 +110,7 @@ ul>li>a {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 150px;
+  
 }
 .login-link {
   padding-top: 1px;
