@@ -26,6 +26,14 @@ if(empty($userData)) { header("Location: editprofile.php"); }
 //print_r($userData);
 $posts = $connect->select("SELECT `posts`.*, `user_details`.`name`, `users`.`username` FROM `posts` INNER JOIN `user_details` on `posts`.`user_id`=`user_details`.`user_id` INNER JOIN `users` on `user_details`.`user_id`=`users`.`id` ORDER BY `posts`.`id` DESC ", "", []);
 
+function getComments($post_id){
+    $connect = new Database();
+    $commentData = $connect->Select("SELECT `comments`.*, `user_details`.`name` FROM `comments` INNER JOIN `user_details` on `comments`.`user_id`=`user_details`.`user_id` where `comments`.`post_id`=?",
+        's',
+        [$post_id]
+    );
+    return $commentData;
+}
 
 
 include("libraries/includes/header.php");
@@ -63,13 +71,37 @@ include("libraries/includes/header.php");
                     Here be Reactions - (reactions table in database)
                 </div>
 
-                <div class="post-comments">
-                    this will be where the comments are displayed (comments table)
-                </div>
+
             </div>
 
             <div class="card-footer text-muted">
-                this will be where users can input a comment
+                <div class="post-comments">
+                    <?php
+                    $comments = getComments($post['id']);
+                    if(sizeof($comments) >= 1)
+                    {
+                        foreach( $comments as $comment)
+                        {
+                            ?>
+                            <p>
+                                <b><?php echo $comment['name']; ?></b>: <?php echo $comment['content']; ?>
+                            </p>
+                            <hr>
+                            <?php
+
+                        }
+                    }
+
+                    ?>
+                </div>
+                <form method="post" action="libraries/engine/userActions.php" >
+                    <label>Write Comment</label><br>
+                    <textarea name="content">
+                                        </textarea><br>
+                    <input name="post_id" hidden value="<?php echo $post['id']; ?>">
+                    <input  type="submit" name="action" value="Post Comment">
+
+                </form>
             </div>
         </div>
        <?php

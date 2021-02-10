@@ -62,8 +62,27 @@ if($action == "Post new picture"){
     header("Location:../../index.php");
 }
 
+if($action == "Post Comment")
+{
+    $post_id  = $_POST['post_id'];
+    $content = $_POST['content'];
+    postComment($user_id, $post_id, $content);
+    header("Location:../../index.php");
+}
+
 
 // functions
+function postComment($user, $post, $content){
+    require_once '../classes/Database.php';
+    $connect = new Database();
+    $connect->insert("INSERT INTO `comments` (`user_id`, `post_id`, `content`)  VALUES(?,?,?)",
+        'sss',
+        [$user, $post, $content]
+
+    );
+}
+
+
 function createProfile($name, $bio, $gender, $website){
     require_once '../classes/Database.php';
     $connect = new Database();

@@ -256,6 +256,7 @@ form .signup-link a:hover{
   background-clip: border-box;
   border: 0 solid rgba(0,0,0,.125);
   border-radius: .25rem;
+  margin: 10px;
 }
 
 .card-body {
