@@ -51,8 +51,8 @@ include("libraries/includes/header.php");
 
             </div>
             <div class="card-body text-center">
-                <div class="post-img">
-                    <a href="https://placeholder.com"><img src="https://via.placeholder.com/500" alt=""></a>
+                <div class="post-img <?php echo $post['filter']; ?>">
+                    <img src="/images/users/<?php echo $post['user_id']; ?>/posts/<?php echo $post['id']; ?>.jpg" alt="">
                 </div>
 
                 <div class="post-caption">

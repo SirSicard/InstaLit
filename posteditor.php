@@ -14,21 +14,30 @@
         </div>
         <div class="card-body">
 
-          <form method="post">
+          <form method="post" action="libraries/engine/userActions.php" enctype="multipart/form-data">
 
             <h6>Upload an Image</h6>
               <input name="post" type="file">
 
               <h6>Select Filter</h6>
-              <input name="filter" >
+              <select  name="filter">
+                  <option value="grayscale">grayscale</option>
+                  <option value="sepia">sepia</option>
+                  <option value="saturate">saturate</option>
+                  <option value="hue">hue</option>
+                  <option value="invert">invert</option>
+              </select>
             <h6>Type a Caption</h6>
               <textarea  name="caption" rows="4" cols="50"></textarea>
-          </form>
+
           
         
         <div class="card-footer text-muted text-center">
-          submit
+            <input type="submit" name ="action" value="Post new picture" >
         </div>
+
+
+          </form>
       </div>
     </div>
   </div>

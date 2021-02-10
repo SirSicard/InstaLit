@@ -27,7 +27,9 @@ if($action == "Create Profile"){
     //create profile
     createProfile($name, $bio, $gender, $website);
     //if user uploads profile
-    if(is_uploaded_file($_FILES['profile'])){ profilePicture($_FILES['profile'],$user_id);}
+    if(!$_FILES["profile"]["error"] == 4) {
+        uploads($_FILES['profile'],$user_id, "profile");
+    }
 
     //redirect to feed page
     header("Location:../../index.php");
@@ -40,7 +42,7 @@ if($action == "Save Profile"){
     updateProfile($name, $bio, $gender, $website, $user_id);
     //if user uploads profile
     if(!$_FILES["profile"]["error"] == 4) {
-        profilePicture($_FILES['profile'],$user_id);
+        uploads($_FILES['profile'],$user_id, "profile");
     }
     header("Location:../../index.php");
 }
@@ -48,6 +50,15 @@ if($action == "Save Profile"){
 
 if($action == "Save Password"){
     updatePassword($_POST['password'], $user_id);
+    header("Location:../../index.php");
+}
+
+if($action == "Post new picture"){
+    $filter = $_POST['filter'];
+    $caption = $_POST['caption'];
+
+    uploadPost($filter, $caption, $user_id);
+
     header("Location:../../index.php");
 }
 
@@ -74,6 +85,9 @@ function updateProfile($name, $bio, $gender, $website, $user_id){
 }
 
 
+
+
+
 function updatePassword($password, $user_id)
 {
     require_once '../classes/Database.php';
@@ -84,10 +98,26 @@ function updatePassword($password, $user_id)
 }
 
 
-function profilePicture($image,$user_id){
+function uploadPost($filter, $caption, $user_id){
+    require_once '../classes/Database.php';
+    $connect = new Database();
+    $id = $connect->insert("INSERT INTO `posts` (`user_id`, `content`, `filter`)  VALUES(?,?,?)",
+        'sss',
+        [ $user_id, $caption, $filter ]
+    );
+    if(!$_FILES["post"]["error"] == 4) {
+        uploads($_FILES['post'], $id , "posts");
+    }
+
+
+
+}
+
+function uploads($image,$user_id, $type){
 
     //where to save the image
-    $destination = "..\\..\\images\\users\\$user_id\\profile\\";
+    $user = $_SESSION['user'];
+    $destination = "..\\..\\images\\users\\$user\\$type\\";
     $fileToUpload = $destination.$user_id;
     $imageFileType = strtolower(pathinfo($destination.basename($image["name"]),PATHINFO_EXTENSION));
     var_dump($fileToUpload);
