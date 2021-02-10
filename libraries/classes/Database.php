@@ -6,7 +6,7 @@ class Database{
 
 
     //connection inside construct
-    public function __construct($dbhost="localhost", $dbname="instalit", $dbuser="MattiasHerzig", $dbpassword="Exet1338!")
+    public function __construct($dbhost="localhost", $dbname="instalit", $dbuser="root", $dbpassword="")
     {
         try{
             $this->connection = new mysqli($dbhost, $dbuser, $dbpassword, $dbname);
@@ -61,7 +61,8 @@ class Database{
         try{
             $doWork = $this->connection->prepare($statement);
 //            $types = str_repeat('s', count($parameters));
-            $doWork->bind_param($types,...$parameters);
+            if(!empty($types) and !empty($parameters))
+            { $doWork->bind_param($types,...$parameters); }
             $doWork->execute();
             return $doWork;
         }catch(Exception $e)

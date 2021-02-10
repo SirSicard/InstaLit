@@ -7,9 +7,11 @@ require_once '../classes/Database.php';
 //start session
 session_start();
 
-// we tell auth page which function to call from here
-$action = $_POST['submit'];
+// get what user wants to do,
+$action = isset($_POST['submit'])?$_POST['submit']:$_GET['action'];
 
+
+// if user wants to create an account
 if($action === "Create account"){
     $username = $_POST['username'];
     // discuss security and hashing of password
@@ -21,6 +23,8 @@ if($action === "Create account"){
 }
 
 
+
+// if user wants to login
 if($action === "Login")
 {
     //    catch login details
@@ -31,8 +35,8 @@ if($action === "Login")
 }
 
 
-// logout
-if($action === "Logout") { logout(); }
+// if user wants to logout
+if($action === "logout") { logout(); }
 
 //function to sign up a user
 function signup($username, $email, $password){
@@ -80,7 +84,7 @@ function login($email, $password){
         if(!empty($auth))
             {
 
-                $_SESSION['user'] = $auth[0][id];
+                $_SESSION['user'] = $auth[0]['id'];
                 header("Location:../../index.php");
 //                after session value is set up, send the user to profile page
             }
@@ -93,7 +97,7 @@ function login($email, $password){
     }
     else{
 //                redirect user to login page again
-        echo "place 2";
+        header("Location: ../../login.php");
     }
 
 
@@ -103,5 +107,6 @@ function login($email, $password){
 function logout(){
 
     session_destroy();
+    header("Location: ../../login.php");
 
 }
