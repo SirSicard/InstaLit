@@ -147,7 +147,7 @@ function uploads($image,$user_id, $type){
 
     //check if the uploaded file is image or not
     if(isset($_POST["submit"])) {
-        $check = getimagesize(image["tmp_name"]);
+        $check = getimagesize($image["tmp_name"]);
         if($check !== false) {
             echo "File is an image - " . $check["mime"] . ".";
             $verified = 1;
@@ -156,8 +156,9 @@ function uploads($image,$user_id, $type){
             $verified = 0;
         }
     }
-    // only allow jpg
-    if($imageFileType != "jpg" ) {
+    // only allow images
+    // if( $imageFileType != "jpg" ) {
+    if( !in_array($imageFileType, ["jpg", "png", "jpeg", "gif"]) ) {
         echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
         $verified = 0;
     }

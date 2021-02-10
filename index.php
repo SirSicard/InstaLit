@@ -60,7 +60,25 @@ include("libraries/includes/header.php");
             </div>
             <div class="card-body text-center">
                 <div class="post-img <?php echo $post['filter']; ?>">
-                    <img src="/images/users/<?php echo $post['user_id']; ?>/posts/<?php echo $post['id']; ?>.jpg" alt="">
+                    <?php
+
+                      // Get the path to the current users img folder
+                      $img_folder = __DIR__."/images/users/{$post['user_id']}/posts";
+                      // Then we scan it for all images and remove the other paths
+                      $imgs = array_diff(scandir($img_folder), array('..', '.'));
+                      $img_file = '';
+                    
+                      // After we've found all images in the folder, we check all of them to see if any of them are the current img we want
+                      foreach( $imgs as $img_key => $img ){ 
+                        // If the ID ends with a . we know it's our image cause strpos() will return 0
+                        // strpos() returns FALSE if it cannot find any match
+                        if( strpos($img, "{$post['id']}.") === 0 ){
+                          $img_file = $img;
+                        }
+                      }
+
+                    ?>
+                    <img src="/images/users/<?php echo $post['user_id']; ?>/posts/<?php echo $img_file; ?>" alt="">
                 </div>
 
                 <div class="post-caption">

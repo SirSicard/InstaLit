@@ -31,7 +31,7 @@ $userData = $connect->select("select * from user_details where user_id=?",'i', [
                     <span class="text-black-50">mattias.herzig@medieinstitutet.se</span>
                 </div>
             <div class="d-flex flex-column align-items-center text-center" id="img-section"> <b>Profile Photo</b>
-                <p>Accepted file type .png. Less than 1MB</p> <input class="btn btn-primary profile-button" type="file" name="profile">
+                <p>Accepted  type .png. Less than 1MB</p> <input class="btn btn-primary profile-button" type="file" name="profile">
             </div>
         </div>
     </div>
