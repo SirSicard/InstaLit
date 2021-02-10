@@ -289,21 +289,7 @@ form .signup-link a:hover{
 /* End of profile page styling */
 
 /* Edit profile page styling */
-.form-control:focus {
-  box-shadow: none;
-  border-color: #ff9d32
-}
 
-.profile-button {
-  background: #ffd030;
-  box-shadow: none;
-  border: none;
-  color: black;
-}
-.profile-button:active {
-  background: #ff9d32;
-  box-shadow: none
-}
 /* End of edit profile page styling */
 
 /* Footer styling */
