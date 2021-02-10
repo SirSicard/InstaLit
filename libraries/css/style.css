@@ -447,4 +447,23 @@ footer {
 }  
 
 
+/* css filters */
+.grayscale{
+  filter: grayscale(100%)
+}
+
+.sepia{
+  filter: sepia(0.8);
+}
+
+.saturate{
+  filter: saturate(2);
+}
+.hue{
+  filter: hue-rotate(180deg);
+}
+.invert{
+  filter: invert(100%);
+}
+
 /* End of footer styling */
