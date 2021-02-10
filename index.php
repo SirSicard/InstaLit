@@ -2,6 +2,10 @@
 session_start();
 require 'vendor/autoload.php';
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 use Carbon\Carbon;
 
 // if no user is logged in
@@ -41,7 +45,42 @@ include("libraries/includes/header.php");
 ?>
     <div class="row">
     <div class="col-12">
+      
+
     <div class="post-container">
+      <div class="card">
+        <div class="card-header">
+            <div class="content-container">
+              <?php 
+                $feedbar = array(
+                  'posteditor' => [
+                    'name'    => 'Create New Post',
+                    'classes' => 'fas fa-toilet-paper',
+                  ]
+                );
+              ?>
+
+              <div>
+                Welcome, User!
+              </div>
+
+              <div class="spacer"></div>
+
+              <?php
+              foreach($feedbar as $link_key => $link_value){ 
+                if( isset($_SESSION["user"]) && ( $link_key === 'signup' || $link_key === 'login' ) ){ 
+                  // do nothing
+                } else { ?>
+                  
+                    <a class="profile-links" href="<?= $link_key; ?>.php">
+                      <i class="<?= $link_value['classes']; ?>"></i> <?= $link_value['name']; ?>
+                    </a>
+                <?php } ?>
+              <?php } ?>
+            
+            </div>
+        </div>   
+    </div>
 
     <?php
 
@@ -58,34 +97,46 @@ include("libraries/includes/header.php");
                 </div>
 
             </div>
-            <div class="card-body text-center">
-                <div class="post-img <?php echo $post['filter']; ?>">
+            <div class="text-center">
+                <div class="<?php echo $post['filter']; ?>">
                     <?php
-
-                      // Get the path to the current users img folder
-                      $img_folder = __DIR__."/images/users/{$post['user_id']}/posts";
-                      // Then we scan it for all images and remove the other paths
-                      $imgs = array_diff(scandir($img_folder), array('..', '.'));
-                      $img_file = '';
-                    
-                      // After we've found all images in the folder, we check all of them to see if any of them are the current img we want
-                      foreach( $imgs as $img_key => $img ){ 
-                        // If the ID ends with a . we know it's our image cause strpos() will return 0
-                        // strpos() returns FALSE if it cannot find any match
-                        if( strpos($img, "{$post['id']}.") === 0 ){
-                          $img_file = $img;
+                      if( file_exists(__DIR__."/images/users/{$post['user_id']}/posts") ){
+                        // Get the path to the current users img folder
+                        $img_folder = __DIR__."/images/users/{$post['user_id']}/posts";
+                        // Then we scan it for all images and remove the other paths
+                        $imgs = array_diff(scandir($img_folder), array('..', '.'));
+                        $img_file = '';
+                      
+                        // After we've found all images in the folder, we check all of them to see if any of them are the current img we want
+                        foreach( $imgs as $img_key => $img ){ 
+                          // If the ID ends with a . we know it's our image cause strpos() will return 0
+                          // strpos() returns FALSE if it cannot find any match
+                          if( strpos($img, "{$post['id']}.") === 0 ){
+                            $img_file = $img;
+                          }
                         }
+                      ?>
+                        <img src="/images/users/<?php echo $post['user_id']; ?>/posts/<?php echo $img_file; ?>" alt="">
+                      <?php
+                      } else {
+                        echo 'User has no img folder';
                       }
 
                     ?>
-                    <img src="/images/users/<?php echo $post['user_id']; ?>/posts/<?php echo $img_file; ?>" alt="">
+
                 </div>
 
-                <div class="post-caption">
+                <div class="card-body post-caption">
+                  <div>
+                    <?php echo $post['username']; ?> says:
+                  </div>
+
+                  <div>  
                     <?php echo $post['content']; ?>
+                  </div>
                 </div>
 
-                <div class="post-reactions">
+                <div class="card-body post-reactions">
                     Here be Reactions - (reactions table in database)
                 </div>
 
