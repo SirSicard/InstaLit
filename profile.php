@@ -30,10 +30,7 @@ $userData = $connect->select("select * from user_details where user_id=?",'i', [
                          src="<?php if(!empty($userData))  { echo "/images/users/$user_id/profile/$user_id.jpg" ;} else  { echo "/images/ui/default_user.png"; } ?>">
                             <div class="mt-3">
                                 <h4><?php if(!empty($userData)){ echo $userData[0]['name']; } ?></h4>
-                                <p class="text-secondary mb-1">Full Stack Developer</p>
-                                <p class="text-muted font-size-sm">Malmö, Sweden</p>
-                                <button class="btn btn-primary">Friend me</button>
-                                <button class="btn btn-outline-primary">Message me</button>
+                                <p class="text-secondary mb-1"><?php if(!empty($userData)){ echo $userData[0]['website']; } ?></p>
                             </div>
                         </div>
                     </div>
