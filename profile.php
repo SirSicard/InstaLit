@@ -15,7 +15,7 @@ $user_id = $_SESSION['user'];
 //check if the user has profile or not
 require_once 'libraries/classes/Database.php';
 $connect = new Database();
-$userData = $connect->select("select * from user_details where user_id=?",'i', [$user_id]);
+$userData = $connect->select("SELECT `user_details`.*, `users`.`email` from `user_details` INNER JOIN `users` on `user_details`.`user_id` = `users`.`id` WHERE `user_details`.`user_id` = ?",'i', [$user_id]);
 ?>
 
 
@@ -86,7 +86,7 @@ $userData = $connect->select("select * from user_details where user_id=?",'i', [
                                 <h6 class="mb-0">Email</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                <p><?php if(!empty($userData)){ echo $userData[0]['user_id']; } ?></p>
+                                <p><?php if(!empty($userData)){ echo $userData[0]['email']; } ?></p>
                             </div>
                         </div>
                         <hr>
