@@ -9,7 +9,14 @@ if(!isset($_SESSION['user']))
     header("Location:login.php");
 }
 // get user id from session
-$user_id = $_SESSION['user'];
+
+if(isset($_GET['user_id']))
+{
+    $user_id = $_GET['user_id'];
+}else{
+    $user_id = $_SESSION['user'];
+}
+
 
 
 //check if the user has profile or not
