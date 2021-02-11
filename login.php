@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="en">
 
@@ -22,7 +23,19 @@
 
   <div class="center">
     <div class="container">
+        <?php
+        if(isset($_SESSION['flash'])) {
+            ?>
+            <div class="alert alert-info mt-3" role="alert">
+                <?php echo $_SESSION['flash'] ?>
+            </div>
+
+            <?php
+            unset( $_SESSION['flash']);
+        }
+        ?>
       <div class="content-container">
+
         <div class="card text-center" style="width: 410px;">
           <img src="images/ui/logoXL.png" alt="" class="login-img">
           <div class="card-body">

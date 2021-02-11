@@ -28,7 +28,7 @@
     ],
     'profile' => [
       'name'    => 'My Page',
-      'classes' => 'fas fa-user-circle',
+      'classes' => 'fas fa-address-card',
     ],
     'editprofile' => [
       'name'    => 'Settings',
@@ -49,8 +49,8 @@
       <div class="spacer"></div>
 
       <div class="searchbar">
-        <form action="/action_page.php">
-          <input type="text" placeholder="Search" name="search">
+        <form action="/results.php" method="post">
+          <input type="text" placeholder="Search" name="keyword">
           <button type="submit"><i class="fas fa-search"></i></button>
         </form>
       </div>
@@ -64,8 +64,8 @@
               // do nothing
             } else { ?>
               <li>
-                <a href="<?= $link_key; ?>.php">
-                  <?= $link_value['name']; ?>
+                <a href="<?= $link_key; ?>.php" title="<?= $link_value['name']; ?>">
+                  <i class="<?= $link_value['classes']; ?>"></i>
                 </a>
               </li>
             <?php } ?>

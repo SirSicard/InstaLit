@@ -55,12 +55,15 @@ function signup($username, $email, $password){
                 ]);
 
             if(is_numeric($createUser)) {
-                echo "you have registered one user";
+                header("Location: ../../editprofile.php");
             }else{
-                echo "something went wrong.";
+
+                $_SESSION['flash'] = "Unable to create users";
+                header("Location: ../../login.php");
             }
     }else{
-        echo "items cannot be empty";
+        $_SESSION['flash'] = "Unable to create users";
+        header("Location: ../../login.php");
     }
 }
 
@@ -91,12 +94,14 @@ function login($email, $password){
         else
             {
 //                Login data was not correct
+            $_SESSION['flash'] = "Unable to login";
             header("Location: ../../login.php");
             }
 
     }
     else{
 //                redirect user to login page again
+        $_SESSION['flash'] = "Unable to login";
         header("Location: ../../login.php");
     }
 

@@ -1,5 +1,24 @@
 <?php include("libraries/includes/header.php"); ?>
 
+<?php
+session_start();
+// if no user is logged in
+if(!isset($_SESSION['user']))
+{
+    session_destroy();
+    header("Location:login.php");
+}
+// get user id from session
+$user_id = $_SESSION['user'];
+
+
+//check if the user has profile or not
+require_once 'libraries/classes/Database.php';
+$connect = new Database();
+$userData = $connect->select("SELECT `user_details`.*, `users`.`email` from `user_details` INNER JOIN `users` on `user_details`.`user_id` = `users`.`id` WHERE `user_details`.`user_id` = ?",'i', [$user_id]);
+?>
+
+
 <div class="profile-container">
     <div class="main-body">
         <div class="row gutters-sm">
@@ -7,13 +26,11 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex flex-column align-items-center text-center">
-                            <img src="https://scontent.fmmx3-1.fna.fbcdn.net/v/t1.0-9/118516678_10157156522332471_3673352244740208855_o.jpg?_nc_cat=103&ccb=2&_nc_sid=84a396&_nc_ohc=lav6deMCo_cAX9BH8W5&_nc_ht=scontent.fmmx3-1.fna&oh=6ba14f8924fa4a8ccf7ed0da8098aca1&oe=60461216" alt="Admin" class="rounded-circle" width="150">
+                        <img class="rounded-circle mt-5" width="150px"
+                         src="<?php if(!empty($userData))  { echo "/images/users/$user_id/profile/$user_id.jpg" ;} else  { echo "/images/ui/default_user.png"; } ?>">
                             <div class="mt-3">
-                                <h4>Mattias Herzig</h4>
-                                <p class="text-secondary mb-1">Full Stack Developer</p>
-                                <p class="text-muted font-size-sm">Malmö, Sweden</p>
-                                <button class="btn btn-primary">Friend me</button>
-                                <button class="btn btn-outline-primary">Message me</button>
+                                <h4><?php if(!empty($userData)){ echo $userData[0]['name']; } ?></h4>
+                                <p class="text-secondary mb-1"><?php if(!empty($userData)){ echo $userData[0]['website']; } ?></p>
                             </div>
                         </div>
                     </div>
@@ -51,7 +68,16 @@
                                 <h6 class="mb-0">Full Name</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                <p>Mattias Herzig</p>
+                                <p><?php if(!empty($userData)){ echo $userData[0]['name']; } ?></p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">Gender</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                <p><?php if(!empty($userData)){ echo $userData[0]['gender']; } ?></p>
                             </div>
                         </div>
                         <hr>
@@ -60,81 +86,27 @@
                                 <h6 class="mb-0">Email</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                <p>mattias.herzig@medieinstitutet.se</p>
+                                <p><?php if(!empty($userData)){ echo $userData[0]['email']; } ?></p>
                             </div>
                         </div>
                         <hr>
                         <div class="row">
                             <div class="col-sm-3">
-                                <h6 class="mb-0">Phone</h6>
+                                <h6 class="mb-0">Website</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                <p>+46768568541</p>
+                                <p><?php if(!empty($userData)){ echo $userData[0]['website']; } ?></p>
                             </div>
                         </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <h6 class="mb-0">Address</h6>
-                            </div>
-                            <div class="col-sm-9 text-secondary">
-                                <p>Malmö, Sweden</p>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
                 <div class="row gutters-sm">
-                <div class="col-sm-6 mb-3">
+                <div class="col-sm-12 mb-3">
                   <div class="card h-100">
                     <div class="card-body">
-                      <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">assignment: </i>InstaLIT</h6>
-                      <small>Web Design</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>Website Markup</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 72%" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>One Page</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 89%" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>Mobile Template</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>Backend API</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6 mb-3">
-                  <div class="card h-100">
-                    <div class="card-body">
-                      <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">assignment</i>Project Status</h6>
-                      <small>Web Design</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>Website Markup</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 72%" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>One Page</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 89%" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>Mobile Template</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>Backend API</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
+                      <h6 class="d-flex align-items-center mb-3"><b>Bio</u></b></h6>
+                      <p><?php if(!empty($userData)){ echo $userData[0]['bio']; } ?></p>
                     </div>
                   </div>
                 </div>
