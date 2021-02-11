@@ -136,7 +136,7 @@ function uploads($image,$user_id, $type){
 
     //where to save the image
     $user = $_SESSION['user'];
-    $destination = "..\\..\\images\\users\\$user\\$type\\";
+    $destination = '../../images/users' . '/' . $user . '/'. $type .'/';
     $fileToUpload = $destination.$user_id;
     $imageFileType = strtolower(pathinfo($destination.basename($image["name"]),PATHINFO_EXTENSION));
     var_dump($fileToUpload);
