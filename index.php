@@ -43,10 +43,21 @@ function getComments($post_id){
 include("libraries/includes/header.php");
 
 ?>
-<div class="col-12">
+<div class="col-12  ">
   
 
 <div class="post-container">
+    <?php
+    if(isset($_SESSION['flash'])) {
+        ?>
+        <div class="alert alert-info mt-3" role="alert">
+            <?php echo $_SESSION['flash'] ?>
+        </div>
+
+        <?php
+        unset( $_SESSION['flash']);
+    }
+        ?>
   <div class="card">
     <div class="card-header gray-accent-light">
         <div class="content-container">
@@ -94,6 +105,7 @@ foreach($posts as $post)
                 <div class="spacer"></div>
                 <div class="post-right secondary-text"><?php echo Carbon::parse($post['created_at'])->diffForHumans(); ?></div>
             </div>
+
 
         </div>
         <div class="text-center">

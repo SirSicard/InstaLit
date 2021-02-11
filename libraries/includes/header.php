@@ -49,8 +49,8 @@
       <div class="spacer"></div>
 
       <div class="searchbar">
-        <form action="/action_page.php">
-          <input type="text" placeholder="Search" name="search">
+        <form action="/results.php" method="post">
+          <input type="text" placeholder="Search" name="keyword">
           <button type="submit"><i class="fas fa-search"></i></button>
         </form>
       </div>

@@ -32,6 +32,7 @@ if($action == "Create Profile"){
     }
 
     //redirect to feed page
+    $_SESSION['flash'] = "Profile created";
     header("Location:../../index.php");
 }
 
@@ -44,12 +45,14 @@ if($action == "Save Profile"){
     if(!$_FILES["profile"]["error"] == 4) {
         uploads($_FILES['profile'],$user_id, "profile");
     }
+    $_SESSION['flash'] = "Profile updated";
     header("Location:../../profile.php");
 }
 
 
 if($action == "Save Password"){
     updatePassword($_POST['password'], $user_id);
+    $_SESSION['flash'] = "password updated";
     header("Location:../../index.php");
 }
 
@@ -58,6 +61,8 @@ if($action == "Post new picture"){
     $caption = $_POST['caption'];
 
     uploadPost($filter, $caption, $user_id);
+    $_SESSION['flash'] = "new picture uploaded";
+
 
     header("Location:../../index.php");
 }
@@ -67,6 +72,7 @@ if($action == "Post Comment")
     $post_id  = $_POST['post_id'];
     $content = $_POST['content'];
     postComment($user_id, $post_id, $content);
+    $_SESSION['flash'] = "you added a comment";
     header("Location:../../index.php");
 }
 

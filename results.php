@@ -11,25 +11,27 @@ if(!isset($_SESSION['user']))
 }
 
 // get user id from session
-$user_id = $_SESSION['user'];
+$keyword = $_POST['keyword'];
+
+if(empty($keyword)) {
+    $_SESSION['flash'] = "You need to type a name to search";
+    header("Location: index.php");
+}
 
 
 //check if the user has profile or not
 require_once 'libraries/classes/Database.php';
 $connect = new Database();
-$userData = $connect->select("select * from user_details where user_id=?",'i', [$user_id]);
+$results = $connect->select("select * from user_details where match `name` AGAINST(? IN NATURAL LANGUAGE MODE)",'s', [$keyword]);
 
 // if user doesnt have profile, take him to the page to settings
-if(empty($userData)) { header("Location: settings.php"); }
+if(empty($results)) {
+    $_SESSION['flash'] = "Your keyword didnt match to anything";
+    header("Location: index.php"); }
 //if he has profile, show the feed page
 //print_r($userData);
-$getFeeds = $connect->select("select * from posts", "", []);
-print_r($getFeeds);
-?>
 
-<div>
-    If you see this, this is the results page.
-</div>
+?>
 
 <div class="row">
   <div class="col-12">
@@ -41,11 +43,19 @@ print_r($getFeeds);
         <div class="card-body text-center">
 
           <!-- if we are using a foreach loop to make all of the results, this is the template:   -->
+            <?php foreach($results as $result)
+                {
+
+               ?>
           <div class="content-container">
-            <div class="post-left">Avatar Image | username</div>
+            <div class="post-left">
+                <?php echo $result['name']; ?>
+            </div>
             <div class="spacer"></div>
             <div class="post-right">timestamp</div>
           </div>
+
+          <?php } ?>
         
         </div>
         

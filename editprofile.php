@@ -18,7 +18,7 @@ $userData = $connect->select("select * from user_details where user_id=?",'i', [
 
 
 <?php include("libraries/includes/header.php"); ?>
-<form method="post" action="libraries/engine/userActions.php"> 
+<form method="post" action="libraries/engine/userActions.php" enctype="multipart/form-data">
     <div class="profile-container">
         <div class="main-body">
             <div class="row gutters-sm">    
@@ -29,11 +29,12 @@ $userData = $connect->select("select * from user_details where user_id=?",'i', [
                             <div class="d-flex flex-column align-items-center text-center p-3 py-5">
                                     <img class="rounded-circle mt-5" width="150px"
                                         src="<?php if(!empty($userData))  { echo "/images/users/$user_id/profile/$user_id.jpg" ;} else  { echo "/images/ui/default_user.png"; } ?>">
-                                <span class="font-weight-bold">Mattias Herzig</span>
+                                <span class="font-weight-bold"><?php if(!empty($userData)){ echo $userData[0]['name']; } ?></span>
                                 <span class="text-black-50"><?php if(!empty($userData)){ echo $userData[0]['website']; } ?></span>
                             </div>
                             <div class="d-flex flex-column align-items-center text-center" id="img-section"> <b>Profile Photo</b>
-                                <p>Accepted  type .png. Less than 1MB</p> <input class="btn btn-primary profile-button" type="file" name="profile">
+                                <p>Accepted  type .png. Less than 1MB</p>
+                                <input class="btn btn-primary profile-button" type="file" name="profile">
                             </div>
                         </div>
                     </div>
