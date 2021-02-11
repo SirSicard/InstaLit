@@ -90,7 +90,7 @@ foreach($posts as $post)
     <div class="card">
         <div class="card-header gray-accent-light">
             <div class="content-container">
-                <div class="post-left"><?php echo $post['username']; ?></div>
+                <div class="post-left"><span class="fire-text padding-right"><i class="fas fa-fire-alt"> </span></i><?php echo $post['username']; ?></div>
                 <div class="spacer"></div>
                 <div class="post-right secondary-text"><?php echo Carbon::parse($post['created_at'])->diffForHumans(); ?></div>
             </div>

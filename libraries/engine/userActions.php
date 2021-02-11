@@ -44,7 +44,7 @@ if($action == "Save Profile"){
     if(!$_FILES["profile"]["error"] == 4) {
         uploads($_FILES['profile'],$user_id, "profile");
     }
-    header("Location:../../index.php");
+    header("Location:../../profile.php");
 }
 
 

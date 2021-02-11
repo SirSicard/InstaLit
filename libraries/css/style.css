@@ -10,9 +10,9 @@ html {
   --secondary-text: #768590;
   --tertiary-text: #b9b7b7;
 
-  --fire1: #ff9d32;
-  --fire2: #ffd030;
-  --fire3: #fedf86;
+  --fire-text1: #ff9d32;
+  --fire-text2: #ffd030;
+  --fire-text3: #fedf86;
 
   --primary-banner-color: #d4d1d1;
   --secondary-banner-color: #a19d9d;
@@ -57,8 +57,8 @@ body {
   background-color: var(--fire3);
 }
 
-.more-padding {
-  padding-bottom: 6px;
+.padding-right {
+  padding-right: 6px;
 }
 
 .col-12 {
@@ -79,6 +79,10 @@ body {
 
 .tertiary-text {
   color: var(--tertiary-text);
+}
+
+.fire-text {
+ color: #ff9d32;
 }
 
 /* END accents */
