@@ -29,12 +29,12 @@ TRELLO
 
 INSTALLING THE INSTALIT PROJECT
 ----------------
- 1. pull the app from git,
- 2. run composer install
- 3. import the provided sql file
- 4. update the database credentials on the file /libraries/classes/Database.php
-
-To fully utilize the instaLIT project, a Virtual Host is highly recommended to resolve possible host conflicts. 
+ 1. Pull the app from Git,
+ 2. Run composer install
+ 3. Import the provided SQL file
+ 4. Update the database credentials on the file ```/libraries/classes/Database.php```  
+  
+**NOTE:** To fully utilize the instaLIT project, a Virtual Host is highly recommended to resolve possible host conflicts. 
 
 1. Add a VirtualHost to the httpd-vhosts.conf
 2. Add info in C:\Windows\System32\drivers\etc\hosts
@@ -53,7 +53,25 @@ To fully utilize the instaLIT project, a Virtual Host is highly recommended to r
 
 ---------------------------------------
 
-FEATURES
+CURRENT FEATURES
 ----------------
 
-TBA
+- You can make an account and edit your information.
+- You can log in and log out of said account.
+- You can compose a post with an image and a caption.
+- You can give your image a filter via dropdown menu.
+- Your own posts and others' posts can be viewed on the Main Feed.
+- You can comment on any post.
+
+---------------------------------------
+
+COMING SOON(tm)
+----------------
+
+- Visiting others' profiles.
+- Editing/Deleting your own existing posts.
+- Reactions: is it LIT or is it $#!7?
+- Light Mode, Dark Mode, LIT Mode.
+- Image Type Optimization.
+- Deleting/Editing own comments.
+- Deleting others' comments on your own post.
