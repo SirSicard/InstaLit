@@ -71,7 +71,7 @@ $userData = $connect->select("SELECT `user_details`.*, `users`.`email` from `use
                 <div class="card mb-3">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-sm-3">
+                            <div class="col-sm-4">
                                 <h6 class="mb-0">Full Name</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
@@ -108,16 +108,15 @@ $userData = $connect->select("SELECT `user_details`.*, `users`.`email` from `use
                         
                     </div>
                 </div>
-                <div class="row gutters-sm">
+                
                 <div class="col-sm-12 mb-3">
-                  <div class="card h-100">
+                  <div class="card bio-height">
                     <div class="card-body">
                       <h6 class="d-flex align-items-center mb-3"><b>Bio</u></b></h6>
                       <p><?php if(!empty($userData)){ echo $userData[0]['bio']; } ?></p>
                     </div>
                   </div>
                 </div>
-              </div>
             </div>
           </div>
         </div>

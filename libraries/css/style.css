@@ -349,6 +349,10 @@ form .signup-link a:hover{
 .shadow-none {
   box-shadow: none!important;
 }
+
+.bio-height{
+  min-height: 203px;
+}
 /* End of profile page styling */
 
 /* Edit profile page styling */
@@ -534,3 +538,5 @@ footer {
   filter: none;
 }
 /* END CSS filters */
+
+
