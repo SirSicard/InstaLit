@@ -91,6 +91,8 @@ THU FEB11:
 
 FRI FEB12:
 	Optional Work for our own Learning Progress
+  Small CSS Adjustments
+  Fixed Profile Image Bypass and Show on Profile
 	Project Turn in date
 	
 	
