@@ -27,7 +27,7 @@ $userData = $connect->select("SELECT `user_details`.*, `users`.`email` from `use
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-                                    <img class="rounded-circle mt-5" width="150px">
+
                                     <?php 
                                           //if(!empty($userData))  { echo "/images/users/$user_id/profile/$user_id.jpg" ;} else  { echo "/images/ui/default_user.png"; } 
 
@@ -37,17 +37,19 @@ $userData = $connect->select("SELECT `user_details`.*, `users`.`email` from `use
                                             // Then we scan it for all images and remove the other paths
                                             $imgs = array_diff(scandir($img_folder), array('..', '.'));
                                             $img_file = '';
+//                                            print_r($imgs);
                                           
                                             // After we've found all images in the folder, we check all of them to see if any of them are the current img we want
-                                            foreach( $imgs as $img_key => $img ){ 
-                                              // If the ID ends with a . we know it's our image cause strpos() will return 0
-                                              // strpos() returns FALSE if it cannot find any match
-                                              if( strpos($img, "{$userData[0]['id']}.") === 0 ){
-                                                $img_file = $img;
-                                              }
-                                            }
+//                                            foreach( $imgs as $img_key => $img ){
+//                                              // If the ID ends with a . we know it's our image cause strpos() will return 0
+//                                              // strpos() returns FALSE if it cannot find any match
+//                                              if( strpos($img, "{$userData[0]['id']}.") === 0 ){
+//                                                $img_file = $img;
+////
+//                                              }
+//                                            }
                                           ?>
-                                            <img src="/images/users/<?= $userData[0]['user_id']; ?>/profile/<?php echo $img_file; ?>" alt="">
+                                            <img class="rounded-circle mt-5" width="150px" src="/images/users/<?php echo $userData[0]['user_id']; ?>/profile/<?php echo $imgs[2]; ?>" alt="">
                                           <?php
                                           } else {
                                             echo 'Error: User\'s image folder does not exist. Please check your System\'s Permissions or contact an Administrator.';

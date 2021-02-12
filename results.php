@@ -52,7 +52,9 @@ if(empty($results)) {
                 <?php echo $result['name']; ?>
             </div>
             <div class="spacer"></div>
-            <div class="post-right">timestamp</div>
+            <div class="post-right">
+            <a href="profile.php?user_id=<?php echo $result['user_id']; ?> ">View Profile</a>
+            </div>
           </div>
 
           <?php } ?>
