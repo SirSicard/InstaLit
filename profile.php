@@ -25,6 +25,18 @@ $connect = new Database();
 $userData = $connect->select("SELECT `user_details`.*, `users`.`email` from `user_details` INNER JOIN `users` on `user_details`.`user_id` = `users`.`id` WHERE `user_details`.`user_id` = ?",'i', [$user_id]);
 ?>
 
+<?php 
+  if( file_exists(__DIR__."/images/users/{$userData[0]['user_id']}/profile") ){
+    // Get the path to the current users img folder
+    $img_folder = __DIR__."/images/users/{$userData[0]['user_id']}/profile";
+    // Then we scan it for all images and remove the other paths
+    $imgs = array_diff(scandir($img_folder), array('..', '.'));
+    $img_file = ''; 
+
+  } else {
+    echo 'Error: User\'s image folder does not exist. Please check your System\'s Permissions or contact an Administrator.'; 
+  } ?>
+
 
 <div class="profile-container">
     <div class="main-body">
@@ -33,12 +45,14 @@ $userData = $connect->select("SELECT `user_details`.*, `users`.`email` from `use
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex flex-column align-items-center text-center">
-                        <img class="rounded-circle mt-5" width="150px"
-                         src="<?php if(!empty($userData))  { echo "/images/users/$user_id/profile/$user_id.jpg" ;} else  { echo "/images/ui/default_user.png"; } ?>">
-                            <div class="mt-3">
-                                <h4><?php if(!empty($userData)){ echo $userData[0]['name']; } ?></h4>
-                                <p class="text-secondary mb-1"><?php if(!empty($userData)){ echo $userData[0]['website']; } ?></p>
-                            </div>
+                          <div class="profilepic">
+                            <img class="rounded-circle" src="/images/users/<?php echo $userData[0]['user_id']; ?>/profile/<?php echo $imgs[2];?>">
+                          </div>
+
+                          <div class="mt-3">
+                            <h4><?php if(!empty($userData)){ echo $userData[0]['name']; } ?></h4>
+                            <p class="text-secondary mb-1"><?php if(!empty($userData)){ echo $userData[0]['website']; } ?></p>
+                          </div>
                         </div>
                     </div>
                 </div>
