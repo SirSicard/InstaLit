@@ -1,0 +1,96 @@
+INSTALIT DAILY PROGRESS
+
+
+MON FEB01:
+	Initial Planning + Assignment Posted
+
+
+TUE FEB02: 
+	Familiarization Day with Ashish + Added Mikko to the Trello via email. 
+	Database Setup: Went over Foreign Keys/Constraints. 
+	Set up initial folder sctructure and Pulled from Repo.
+
+
+WED FEB03: 
+	Optional Day start @ 12:00 - Plan to watch Video Resources if able. 
+	Group Call on request.
+
+
+THU FEB04: 
+	Add BootStrap v4 to the Project. 
+	Boiler Template for HTML
+	GitKraken Familiarization
+
+
+FRI FEB05: 
+	Optional Day start @ 15:30. 
+	Built navbar, testing links, familiarizing with folder structure in project.
+
+
+SAT FEB06:
+	External Links Missing: did a hotfix
+	Bootstrap Familiarization
+
+
+SUN FEB07:
+	Much needed break for all parties.
+
+
+MON FEB08:
+	Project Reflection/Clarification
+		#Retrospective Exercise Notes
+		 The Good (we gucci on this): 
+			 Database Familiarity
+          		 Structure
+          		 new PHP familiarization>
+
+		 The Bad (we can improve this):  
+			 Planning: tasks for each day - workload goals
+         		 Re-plan: set daily tasks (trello + calls)
+         		 On-task clarity: be more specific - Schedule goals
+
+		 The Ugly (we neutral on this): 
+			 no misc comments
+	
+	Ashish has handled and walked us through all the required auth (login, signup, logout) with us.>
+
+	Rehauled the Trello.
+        Added further breakdown of User Stories
+        Self-Assign tasks>
+
+	Troubleshot and went through any conflicts and required tweaks to master branch.>
+
+	InProgress: 
+          User Profile Page (Matt)
+          User Search Directory (Asish)
+          Signup Forms/CSS/QA (Niko)>
+
+
+TUE FEB09:
+	Profile Page Work
+	Added Dropdown to NavBar
+	Redirect, Credential, and other Bug fixes
+	Set up/Debugged Virtual Hosts
+	Classwide Progress Reports
+	Major Branchwide Merge via GIT
+	InProgress:
+	  User Settings / Edit Profile (Matt)
+          Main Feed/ index (Asish)
+          Signup Forms/CSS/QA (Niko)
+          Header fixes to use PHP instead of hard Code | READ ME composing | Continuing Daily Logs (Kim)>
+
+WED FEB10:
+	(TLDR: hauled ass)
+	projectwide bug testing
+	Main Feed Reworks and Styling
+	Omission of unfinished pieces (commented out to save for later)
+	Final Pushes before THU Presentation.
+
+THU FEB11:
+	Nailed it!
+
+FRI FEB12:
+	Optional Work for our own Learning Progress
+	Project Turn in date
+	
+	
