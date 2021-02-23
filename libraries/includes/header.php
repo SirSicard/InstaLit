@@ -34,6 +34,10 @@
       'name'    => 'Settings',
       'classes' => 'fas fa-cog',
     ],
+    'directory' => [
+      'name'    => 'Members',
+      'classes' => 'fas fa-users',
+    ],
   );
 ?>
 
